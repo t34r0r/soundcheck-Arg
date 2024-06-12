@@ -1,6 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    
+    /* background-image: url('path/to/your/image.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path or URL of your image */
+    /*background-size: cover; /* Adjusts the background image to cover the entire element */
+    /*background-position: center; /* Centers the background image within the element */
+    /*background-repeat: no-repeat; /* Prevents the background image from repeating */
+    
+    
     margin: 0;
 }
 
