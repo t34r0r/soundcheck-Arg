@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptographic Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="puzzleModule.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptographic Puzzle</h1>
+        <div class="input-field">
+            <label for="message">Encoded Message:</label>
+            <input type="text" id="message" value="Uifsf jt b tfdsfu nfttbhf" readonly>
+        </div>
+        <div class="input-field">
+            <label for="shift">Shift (Caesar Cipher):</label>
+            <input type="number" id="shift" value="1" readonly>
+        </div>
+        <div class="input-field">
+            <label for="guess">Your Guess:</label>
+            <input type="text" id="guess">
+        </div>
+        <button onclick="checkGuess('puzzle1')">Check Answer</button>
+        <div id="result"></div>
+        <div id="nextPageLink" style="display: none;">
+            <a href="nextPage.html">Go to Next Page</a>
+        </div>
+    </div>
+    <script>
+        PuzzleModule.createPuzzle('puzzle1', 'Uifsf jt b tfdsfu nfttbhf', 1);
+        
+        function checkGuess(puzzleId) {
+            const guess = document.getElementById('guess').value;
+            const result = document.getElementById('result');
+            if (PuzzleModule.checkGuess(puzzleId, guess)) {
+                result.innerText = 'Congratulations! You guessed it right.';
+                result.style.color = 'green';
+                document.getElementById('nextPageLink').style.display = 'block';
+            } else {
+                result.innerText = 'Try again!';
+                result.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
