@@ -5,3 +5,5 @@ Basic cryptograpchic puzzle to start off with
 - just a boiler plate, will be upgraded
 - updated script so you cant just leave and come back
 All code thanks to chatGPT
+
+Testing Discord webhook
