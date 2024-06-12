@@ -57,6 +57,7 @@ const PuzzleModule = (function() {
         createPuzzle,
         checkGuess,
         isPuzzleSolved,
+        decodeCaesarCipher
     };
 })();
 

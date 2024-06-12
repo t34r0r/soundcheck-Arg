@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptographic Puzzle</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="puzzleModule.js"></script>
+    <script src="js/puzzleModule.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -30,7 +30,7 @@
     </div>
     <script>
     // Check if the puzzle is solved in session storage
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem('puzzleSolved') === 'true') {
         document.getElementById('nextPageLink').style.display = 'block';
     }
@@ -40,7 +40,7 @@ function checkGuess() {
     const encodedMessage = document.getElementById('message').value;
     const shift = parseInt(document.getElementById('shift').value);
     const guess = document.getElementById('guess').value.toLowerCase();
-    const decodedMessage = decodeCaesarCipher(encodedMessage, shift).toLowerCase();
+    const decodedMessage = PuzzleModule.decodeCaesarCipher(encodedMessage, shift).toLowerCase();
 
     if (guess === decodedMessage) {
         document.getElementById('result').innerText = 'Congratulations! You guessed it right.';
