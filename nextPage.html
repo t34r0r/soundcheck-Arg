@@ -13,12 +13,13 @@
         <p>This page is only accessible after solving the puzzle.</p>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!PuzzleModule.isPuzzleSolved('puzzle1')) {
-                alert('You need to solve the puzzle first!');
-                window.location.href = 'index.html';
-            }
-        });
+       document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('puzzleSolved') !== 'true') {
+        alert('You need to solve the puzzle first!');
+        window.location.href = 'index.html'; // Redirect to the puzzle page
+    }
+});
+
     </script>
 </body>
 </html>

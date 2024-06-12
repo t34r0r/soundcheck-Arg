@@ -29,20 +29,30 @@
         </div>
     </div>
     <script>
-        PuzzleModule.createPuzzle('puzzle1', 'Uifsf jt b tfdsfu nfttbhf', 1);
-        
-        function checkGuess(puzzleId) {
-            const guess = document.getElementById('guess').value;
-            const result = document.getElementById('result');
-            if (PuzzleModule.checkGuess(puzzleId, guess)) {
-                result.innerText = 'Congratulations! You guessed it right.';
-                result.style.color = 'green';
-                document.getElementById('nextPageLink').style.display = 'block';
-            } else {
-                result.innerText = 'Try again!';
-                result.style.color = 'red';
-            }
-        }
-    </script>
+    // Check if the puzzle is solved in session storage
+document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('puzzleSolved') === 'true') {
+        document.getElementById('nextPageLink').style.display = 'block';
+    }
+});
+
+function checkGuess() {
+    const encodedMessage = document.getElementById('message').value;
+    const shift = parseInt(document.getElementById('shift').value);
+    const guess = document.getElementById('guess').value.toLowerCase();
+    const decodedMessage = decodeCaesarCipher(encodedMessage, shift).toLowerCase();
+
+    if (guess === decodedMessage) {
+        document.getElementById('result').innerText = 'Congratulations! You guessed it right.';
+        document.getElementById('result').style.color = 'green';
+        document.getElementById('nextPageLink').style.display = 'block';
+        // Set flag in session storage
+        sessionStorage.setItem('puzzleSolved', 'true');
+    } else {
+        document.getElementById('result').innerText = 'Try again!';
+        document.getElementById('result').style.color = 'red';
+    }
+}
+</script>
 </body>
 </html>
