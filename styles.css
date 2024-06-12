@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     /*background-color: #000000;*/
-    background-image: url(SOUND-CHECK-BANNER.PNG); /* Replace 'path/to/your/image.jpg' with the actual path or URL of your image */
+    background-image: url(SOUND-CHECK-BANNER.png); /* Replace 'path/to/your/image.jpg' with the actual path or URL of your image */
     background-size: cover; /* Adjusts the background image to cover the entire element */
     background-position: center; /* Centers the background image within the element */
     background-repeat: no-repeat; /* Prevents the background image from repeating */   
